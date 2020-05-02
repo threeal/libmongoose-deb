@@ -1,0 +1,15 @@
+Package: @PACKAGE_DEV_NAME@
+Version: @PACKAGE_VERSION@
+Section: base
+Priority: optional
+Architecture: @PACKAGE_ARCHITECTURE@
+Depends: @PACKAGE_NAME@ (= @PACKAGE_VERSION@)
+Origin: Cesanta
+Maintainer: @PACKAGE_MAINTAINER@
+Homepage: https://github.com/cesanta/mongoose
+Description: Embedded Web Server / Embedded Networking Library (development)
+ Mongoose is ideal for embedded environments. It has been designed
+ for connecting devices and bringing them online. On the market since 2004,
+ used by vast number of open source and
+ commercial products - it even runs on the International Space station!
+ Mongoose makes embedded network programming fast, robust, and easy.
