@@ -7,6 +7,11 @@ It was created to accomodate the library packaging using the debian packaging sy
 
 ### Updating the Source Code
 
+- Initialize and update the `mongoose` submodule.
+  ```sh
+  $ git submodule init
+  $ git submodule update
+  ```
 - Move to the `mongoose` directory and pull the latest update.
   ```sh
   $ cd mongoose
