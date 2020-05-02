@@ -1,6 +1,6 @@
 # Mongoose Deb
 
-This repository contains CMake build project for the mongoose library.
+This repository contains CMake build project for the Mongoose library.
 It was created to accomodate the library packaging using the debian packaging system.
 
 ## Usage
