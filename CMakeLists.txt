@@ -8,16 +8,29 @@ project(mongoose VERSION 6.17)
 # debian package using the same library version
 set(PACKAGE_REVISION 1)
 
-# change this according to the package target architecture
-set(PACKAGE_ARCHITECTURE "i386")
+# set the default install path to inside this project
+if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+  set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/../install"
+    CACHE PATH "default install path" FORCE
+  )
+endif()
+
+# set package architecture according to build target
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "amd64.*|x86_64.*|AMD64.*")
+  set(PACKAGE_ARCHITECTURE "amd64")
+elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "i686.*|i386.*|x86.*")
+  set(PACKAGE_ARCHITECTURE "i386")
+else()
+  set(PACKAGE_ARCHITECTURE "${CMAKE_SYSTEM_PROCESSOR}")
+endif()
 
 set(PACKAGE_VERSION "${PROJECT_VERSION}-${PACKAGE_REVISION}")
 
-set(PACKAGE_NAME "${PROJECT_NAME}${PROJECT_VERSION_MAJOR}")
-set(PACKAGE_PATH "${PACKAGE_NAME}_${PACKAGE_VERSION}")
+set(PACKAGE_NAME "lib${PROJECT_NAME}${PROJECT_VERSION_MAJOR}")
+set(PACKAGE_PATH "${PACKAGE_NAME}_${PACKAGE_VERSION}_${PACKAGE_ARCHITECTURE}")
 
-set(PACKAGE_DEV_NAME "${PROJECT_NAME}-dev")
-set(PACKAGE_DEV_PATH "${PACKAGE_DEV_NAME}_${PACKAGE_VERSION}")
+set(PACKAGE_DEV_NAME "lib${PROJECT_NAME}-dev")
+set(PACKAGE_DEV_PATH "${PACKAGE_DEV_NAME}_${PACKAGE_VERSION}_${PACKAGE_ARCHITECTURE}")
 
 # get the maintainer name from the git config
 execute_process(

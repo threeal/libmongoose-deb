@@ -1,4 +1,4 @@
-# Mongoose Deb
+# Lib Mongoose Deb
 
 This repository contains CMake build project for the Mongoose library.
 It was created to accomodate the library packaging using the debian packaging system.
@@ -20,7 +20,6 @@ It was created to accomodate the library packaging using the debian packaging sy
 - Change some values in the `CMakeLists.txt` as follow:
   - Update the project version according to the current source code version. _(usually could be seen in the `mongoose/mongoose.h` file)_
   - If the project version does not change and you need to create a revised debian package, increase the `PACKAGE_REVISION` value. Else, reset the value to `1`.
-  - Change the `PACKAGE_ARCHITECTURE` value according to the build target architecture.
 
 ### Building the Library
 
@@ -31,11 +30,11 @@ It was created to accomodate the library packaging using the debian packaging sy
   ```
 - Configure Makefile using the following command:
   ```sh
-  $ cmake -DCMAKE_INSTALL_PREFIX="../install" ..
+  $ cmake ..
   ```
 - Build the library.
   ```sh
-  $ make install -j4
+  $ make install
   ```
 
 ### Building the Package
