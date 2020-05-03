@@ -36,6 +36,7 @@ It was created to accomodate the library packaging using the debian packaging sy
   ```sh
   $ make install
   ```
+  > Make sure the `install` directory in this project already emptied, else there could be some unused files that may be included in the package.
 
 ### Building the Package
 

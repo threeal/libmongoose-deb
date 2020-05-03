@@ -6,7 +6,7 @@ project(mongoose VERSION 6.17)
 
 # increase this revision number when building revised
 # debian package using the same library version
-set(PACKAGE_REVISION 1)
+set(PACKAGE_REVISION 2)
 
 # set the default install path to inside this project
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
@@ -58,7 +58,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES SOVERSION ${PROJECT_VERSION_MAJ
 
 install(
   FILES "mongoose/mongoose.h"
-  DESTINATION "${PACKAGE_DEV_PATH}/usr/include/mongoose"
+  DESTINATION "${PACKAGE_DEV_PATH}/usr/include"
 )
 
 install(
